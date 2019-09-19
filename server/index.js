@@ -42,14 +42,9 @@ app.use(
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-const MongoClient = require('mongodb').MongoClient;
+
 const uri = "mongodb+srv://DataBase-1:1234@mycluster-71u5b.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+
 
 mongoose
   .connect(
